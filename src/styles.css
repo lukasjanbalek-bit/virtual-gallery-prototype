@@ -1253,3 +1253,61 @@ body,
     max-width: calc(100vw - 160px);
   }
 }
+/* Gallery exhibits and accessible room announcements. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#support-dialog {
+  color: #eff7f5;
+  background: #0c1416;
+  border: 1px solid #337b6b;
+  border-radius: 8px;
+  padding: 0;
+  width: min(460px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#support-dialog::backdrop { background: rgb(0 0 0 / 75%); }
+#support-dialog form { position: sticky; top: 10px; height: 0; z-index: 1; }
+#support-dialog .support-close {
+  display: block;
+  margin-left: auto;
+  margin-right: 10px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #41645c;
+  border-radius: 4px;
+  color: #e5f4ef;
+  background: #172421;
+  font-size: 24px;
+  cursor: pointer;
+}
+#support-dialog img { display: block; width: 180px; height: auto; margin: 22px auto 0; }
+.support-dialog-copy { padding: 16px 28px 28px; }
+.support-dialog-copy h2 { font-size: 28px; margin: 0; color: #57ddbe; }
+.support-dialog-copy p { font-size: 15px; line-height: 1.6; margin: 14px 0; }
+.support-dialog-copy .support-subtitle { color: #94b5af; margin-top: 4px; }
+.support-donate {
+  display: block;
+  margin-top: 24px;
+  padding: 14px 18px;
+  color: #f5fbf8;
+  background: #1b6856;
+  border: 1px solid #369c7d;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+.support-donate:hover { background: #247d67; }
+.support-donate:focus-visible, .support-close:focus-visible { outline: 2px solid #7feacf; outline-offset: 3px; }

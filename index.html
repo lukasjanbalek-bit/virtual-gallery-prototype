@@ -9,6 +9,18 @@
   <body>
     <main id="app">
       <canvas id="gallery"></canvas>
+      <div id="room-announcement" class="sr-only" role="status" aria-live="polite"></div>
+      <dialog id="support-dialog" aria-labelledby="support-title">
+        <form method="dialog"><button class="support-close" aria-label="Zavřít" title="Zavřít">×</button></form>
+        <img src="./art/banners/tipcore-orbital.gif" width="500" height="474" alt="Animované logo TipCore" />
+        <div class="support-dialog-copy">
+          <h2 id="support-title">TipCore</h2>
+          <p class="support-subtitle">Tvorba, stream a vlastní projekty</p>
+          <p>Maluji klasické i digitální obrazy, streamuji svou tvorbu a proměňuji vlastní nápady ve skutečné projekty. Vedle galerie rozvíjím TipCore, vlastní nástroje pro stream a komunitu.</p>
+          <p>Podpora dává prostor dalším obrazům, vývoji a novým nápadům. Děkuji.</p>
+          <a class="support-donate" href="https://donate.stripe.com/00weVf1NM1NR8KocH3eQM00" target="_blank" rel="noopener noreferrer">Podpořit tvorbu ↗</a>
+        </div>
+      </dialog>
       <section id="brick-texture-tool" hidden>
         <div id="brick-texture-controls">
           <div class="brick-tool-title">Textura zdiva</div>
@@ -189,6 +201,11 @@
           <label>Hloubka místnosti (m) <input id="build-room-depth" type="number" min="2" max="28" step="0.5" value="12" /></label>
           <label>Výška stropu (m) <input id="build-room-height" type="number" min="2.2" max="7" step="0.1" value="3.4" /></label>
           <label>Vlastní název <input id="build-room-name" type="text" placeholder="např. Digitální tvorba" /></label>
+          <label><input id="build-entry-enabled" type="checkbox" checked /> Nápis při vstupu</label>
+          <label>Prostorový nápis <input id="build-entry-title" type="text" maxlength="80" /></label>
+          <label>Podtitulek <input id="build-entry-subtitle" type="text" maxlength="100" /></label>
+          <label>Umístění nápisu <select id="build-entry-placement"><option value="center">Uprostřed místnosti</option><option value="ahead">Před návštěvníkem</option></select></label>
+          <button id="build-entry-preview" type="button">Přehrát nápis</button>
           <label>Krok stěny (m) <input id="build-wall-step" type="number" min="0.25" max="2" step="0.25" value="0.5" /></label>
           <div class="editor-buttons">
             <button id="build-wall-in" type="button" title="Posune vybranou stěnu směrem do místnosti.">Zmenšit přes stěnu</button>
