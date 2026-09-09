@@ -176,6 +176,33 @@
           <label>Výška na čele (cm) <input id="pedestal-sticker-offset-y-cm" type="number" min="8" max="180" step="1" value="55" /></label>
         </div>
       </section>
+      <section id="object-editor">
+        <button id="toggle-object-editor" type="button">Objekty</button>
+        <div id="object-panel">
+          <div id="object-title">Objekty</div>
+          <div id="object-status">Namiř tečku na podlahu.</div>
+          <div class="editor-buttons">
+            <button id="add-object" type="button">Přidat na podlahu</button>
+            <button id="move-object" type="button">Přesunout vybraný</button>
+            <button id="remove-object" type="button">Smazat vybraný</button>
+          </div>
+          <label>Typ <select id="object-type">
+            <option value="prop-pallet">europaleta</option>
+            <option value="prop-crate-pallet">paleta s bednou</option>
+            <option value="prop-box">krabice</option>
+            <option value="prop-barrel">barel</option>
+            <option value="prop-pallet-jack">ruční paleťák</option>
+            <option value="prop-work-light">pracovní světlo</option>
+          </select></label>
+          <label>Velikost <input id="object-scale" type="range" min="40" max="220" step="5" value="100" /></label>
+          <div id="object-scale-value">100 %</div>
+          <input id="object-texture-file" type="file" accept="image/*" hidden />
+          <div class="editor-buttons">
+            <button id="load-object-texture" type="button">Přidat texturu</button>
+            <button id="remove-object-texture" type="button">Smazat texturu</button>
+          </div>
+        </div>
+      </section>
       <section id="build-editor">
         <button id="toggle-build-editor" type="button">Stavba</button>
         <div id="build-panel">

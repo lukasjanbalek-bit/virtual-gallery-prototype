@@ -1311,3 +1311,89 @@ body,
 }
 .support-donate:hover { background: #247d67; }
 .support-donate:focus-visible, .support-close:focus-visible { outline: 2px solid #7feacf; outline-offset: 3px; }
+
+/* Standalone scene-object editor. */
+#object-editor {
+  position: fixed;
+  left: 14px;
+  top: 190px;
+  --editor-top: 190px;
+  z-index: 20;
+  max-width: min(340px, calc(100vw - 28px));
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px;
+}
+
+#audio-editor { top: 234px; --editor-top: 234px; }
+#build-editor { top: 278px; --editor-top: 278px; }
+.viewer-mode #object-editor { display: none; }
+#object-editor:has(#object-panel.visible) { z-index: 30; }
+
+#toggle-object-editor,
+#object-panel button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  padding: 7px 9px;
+  background: rgba(12, 13, 14, 0.72);
+  color: rgba(255, 255, 255, 0.88);
+  cursor: pointer;
+}
+
+#toggle-object-editor:hover,
+#object-panel button:hover { background: rgba(28, 30, 32, 0.82); }
+#toggle-object-editor.active {
+  border-color: rgba(255, 206, 96, 0.72);
+  background: rgba(86, 62, 19, 0.86);
+  color: rgba(255, 241, 196, 0.96);
+}
+#toggle-object-editor.has-selection { box-shadow: inset 3px 0 0 rgba(255, 206, 96, 0.86); }
+
+#object-panel {
+  position: fixed;
+  left: 152px;
+  top: 14px;
+  display: none;
+  width: min(300px, calc(100vw - 180px));
+  min-width: 180px;
+  min-height: 180px;
+  max-width: calc(100vw - 28px);
+  max-height: calc(100dvh - 28px);
+  overflow-y: auto;
+  gap: 8px;
+  padding: 8px 8px 24px;
+  border: 1px solid rgba(53, 216, 190, 0.32);
+  border-radius: 8px;
+  background: rgba(9, 17, 19, 0.94);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(12px);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(45, 211, 183, 0.72) rgba(12, 28, 31, 0.55);
+  container-type: inline-size;
+  z-index: 31;
+}
+#object-panel.visible { display: grid; }
+#object-title {
+  position: sticky;
+  top: -8px;
+  z-index: 2;
+  min-height: 38px;
+  margin: -8px -8px 0;
+  padding: 6px 72px 6px 10px;
+  border-bottom: 1px solid rgba(53, 216, 190, 0.2);
+  background: rgba(12, 28, 31, 0.97);
+  color: #8df4df;
+  font-weight: 800;
+  cursor: move;
+}
+#object-status { color: rgba(255, 255, 255, 0.64); font-size: 11px; line-height: 1.25; }
+#object-panel .editor-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+#object-panel .editor-buttons button { min-height: 30px; padding: 6px 7px; font-size: 11px; white-space: normal; }
+#object-panel label { display: grid; gap: 4px; }
+#object-panel input,
+#object-panel select { width: 100%; box-sizing: border-box; }
+#object-scale-value { color: rgba(255, 229, 184, 0.86); font-size: 12px; font-weight: 700; }
+#object-panel button:disabled { cursor: not-allowed; opacity: 0.42; }
+
+@media (max-width: 520px) {
+  #object-panel { left: 146px; width: calc(100vw - 160px); max-width: calc(100vw - 160px); }
+}
